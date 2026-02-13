@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Pia 💖</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #ff758c, #ff7eb3);
+            overflow-x: hidden;
+        }
+        
+        .screen {
+            max-width: 420px;
+            margin: auto;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        /* HEADINGS */
+        
+        h1 {
+            margin-top: 90px;
+            font-size: 2.2rem;
+        }
+        
+        h2 {
+            font-weight: normal;
+        }
+        /* BUTTONS */
+        
+        .buttons {
+            margin-top: 60px;
+            position: relative;
+            height: 180px;
+        }
+        
+        button {
+            font-size: 1.3rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        #yesBtn {
+            background: #ff4d6d;
+            color: white;
+            top: 0;
+            box-shadow: 0 0 20px rgba(255, 77, 109, .6);
+        }
+        
+        #noBtn {
+            background: white;
+            color: #ff4d6d;
+            top: 80px;
+        }
+        /* LETTER */
+        
+        .letter {
+            display: none;
+            background: rgba(255, 255, 255, .9);
+            color: #ff4d6d;
+            padding: 35px;
+            border-radius: 25px;
+            margin: 100px auto 30px;
+            max-width: 380px;
+            animation: fadeIn 1s ease;
+        }
+        /* MEMORIES */
+        
+        .memories {
+            display: none;
+        }
+        
+        .memory {
+            background: white;
+            color: #ff4d6d;
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease;
+        }
+        
+        .memory img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            animation: slowZoom 12s ease-in-out infinite alternate;
+        }
+        
+        .verse {
+            font-style: italic;
+        }
+        /* LYRICS */
+        
+        .lyrics {
+            opacity: 0;
+            margin: 20px auto 120px;
+            padding: 30px;
+            max-width: 380px;
+            background: rgba(255, 255, 255, .9);
+            border-radius: 25px;
+            color: #ff4d6d;
+            transition: 5s;
+        }
+        
+        .lyrics-line {
+            opacity: 0;
+            transition: opacity 5s ease;
+            margin-bottom: 8px;
+        }
+        /* ENDING */
+        
+        .ending {
+            display: none;
+            min-height: 100vh;
+            padding-top: 40vh;
+            font-size: 2rem;
+        }
+        /* HEARTS */
+        
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 18px;
+            animation: float 6s linear infinite;
+            pointer-events: none;
+        }
+        /* ANIMATIONS */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes float {
+            to {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes slowZoom {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio id="music" loop>
+    <source src="Amazing Love by Hillsong.mp3" type="audio/mpeg">
+</audio>
+
+    <div class="screen">
+
+        <h1>HI CRUSHIEECAKES 💗</h1>
+        <h2>Please click YES… if no, just try it 😌</h2>
+
+        <div class="buttons">
+            <button id="yesBtn">Yes ❤️</button>
+            <button id="noBtn">No 💔</button>
+        </div>
+
+        <div class="letter" id="letter">
+            <h2>MA SOFIA 💌</h2>
+            <p id="typedText"></p>
+        </div>
+
+        <div class="memories" id="memories">
+
+            <div class="memory">
+                <img src="img1.jpg">
+                <div class="verse">“I have found the one whom my soul loves.”</div>
+                <p>You make my heart feel at home.</p>
+            </div>
+
+            <div class="memory">
+                <img src="img2.jpg">
+                <div class="verse">“Love is patient, love is kind.”</div>
+                <p>Your kindness inspires me every day.</p>
+            </div>
+
+            <div class="memory">
+                <img src="img3.jpg">
+                <div class="verse">“Let all that you do be done in love.”</div>
+                <p>Every time I see you smile, I’m reminded how blessed I am.</p>
+            </div>
+
+            <div class="memory">
+                <img src="img4.jpg">
+                <div class="verse">“Be completely humble and gentle.”</div>
+                <p>I admire your heart and the way you care about others.</p>
+            </div>
+
+            <div class="memory">
+                <img src="img5.jpg">
+                <div class="verse">“Love each other as I have loved you.”</div>
+                <p>No matter where life takes us, I’m grateful our paths crossed.</p>
+            </div>
+
+            <!-- 💗 LYRICS -->
+            <div class="lyrics" id="lyrics">
+                <h3>🎶 Amazing Love</h3>
+
+                <div class="lyrics-line">I'm forgiven because You were forsaken</div>
+                <div class="lyrics-line">I'm accepted, You were condemned</div>
+                <div class="lyrics-line">I am alive and well, Your Spirit is within me</div>
+                <div class="lyrics-line">Because You died and rose again</div>
+
+                <div class="lyrics-line">Amazing love, how can it be?</div>
+                <div class="lyrics-line">That You, my King, would die for me?</div>
+                <div class="lyrics-line">Amazing love, I know it's true</div>
+                <div class="lyrics-line">It's my joy to honor You</div>
+
+                <div class="lyrics-line">In all I do, I honor You 🤍</div>
+
+                <div class="lyrics-line">You are my King</div>
+                <div class="lyrics-line">Jesus, You are my King</div>
+            </div>
+
+        </div>
+
+        <div class="ending" id="ending">
+            <h1>I like you 💗</h1>
+            <p>I hope this made you smile 😊</p>
+        </div>
+
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const yesBtn = document.getElementById("yesBtn");
+        const letter = document.getElementById("letter");
+        const memories = document.getElementById("memories");
+        const music = document.getElementById("music");
+        const typedText = document.getElementById("typedText");
+        const lyrics = document.getElementById("lyrics");
+        const lines = document.querySelectorAll(".lyrics-line");
+
+        let scale = 1,
+            index = 0,
+            musicStarted = false;
+        let lyricsShown = false;
+
+        const message = `I truly feel blessed to have met you.
+I believe God placed you in my life for a reason,
+every smile you share warms my heart.
+
+Meeting you truly means a lot to me. 🤍`;
+
+        function startMusic() {
+            if (!musicStarted) {
+                music.play().catch(() => {});
+                musicStarted = true;
+            }
+        }
+
+        function typeLetter() {
+            if (index < message.length) {
+                typedText.innerHTML += message.charAt(index++);
+                setTimeout(typeLetter, 35);
+            }
+        }
+
+        noBtn.onclick = () => {
+            startMusic();
+            scale -= .15;
+            if (scale <= 0) return noBtn.style.display = "none";
+            noBtn.style.left = Math.random() * 80 + "%";
+            noBtn.style.transform = `translateX(-50%) scale(${scale})`;
+        };
+
+        yesBtn.onclick = () => {
+            startMusic();
+            yesBtn.style.display = noBtn.style.display = "none";
+            letter.style.display = "block";
+            memories.style.display = "block";
+            typeLetter();
+        };
+
+        /* FLOATING HEARTS */
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "💖";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }, 700);
+
+        /* LYRICS LINE-BY-LINE */
+        window.addEventListener("scroll", () => {
+            const pos = lyrics.getBoundingClientRect().top;
+
+            if (!lyricsShown && pos < window.innerHeight - 120) {
+                lyricsShown = true;
+                lyrics.style.opacity = 1;
+
+                lines.forEach((line, i) => {
+                    setTimeout(() => {
+                        line.style.opacity = 1;
+                    }, i * 900);
+                });
+            }
+
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 80) {
+                document.getElementById("ending").style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
